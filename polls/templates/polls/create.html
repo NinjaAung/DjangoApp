@@ -1,0 +1,13 @@
+<!-- polls/templates/create.html -->
+{% extends 'polls/base.html' %}
+
+{% block content %}
+    <h3>New Poll</h3>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+        <button type="submit">SUBMIT</button>
+    </form>
+{% endblock %}
