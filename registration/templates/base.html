@@ -1,0 +1,6 @@
+<!-- /templates/base.html -->
+{% if request.user.is_authenticated %}
+    <p>
+        Hello, {{ request.user.username }}!
+    </p>
+{% endif %}
