@@ -45,6 +45,9 @@ class IndexView(generic.ListView):
     template_name = 'polls/index.html'
     context_object_name = 'latest_question_list'
 
+    def show_polls_with_choices(self):    
+        return Poll.objects.exlude(choice_set__isnull=True)
+        
     def get_queryset(self):
         return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
 
