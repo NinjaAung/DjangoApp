@@ -1,6 +1,11 @@
 <!-- polls/templates/index.html -->
 {% extends 'polls/base.html' %}
 
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+
 {% block content %}
 
 {% if latest_question_list %}
